@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "gitbook serve ./content",
-    "build":"gitbook build ./content ./gh-pages"
+    "build": "gitbook build ./content ./gh-pages",
+    "start": "gitbook serve ./content ./gh-pages",
+    "deploy": "node ./scripts/deploy-gh-pages.js",
+    "publish":"npm run build && npm run deploy"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/derams/gitbook/issues"
   },
-  "homepage": "https://github.com/derams/gitbook#readme"
+  "homepage": "https://github.com/derams/gitbook#readme",
+  "dependencies": {
+    "gh-pages": "^1.0.0"
+  }
 }
